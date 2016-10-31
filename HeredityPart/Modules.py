@@ -28,7 +28,9 @@ class Job(object):
 def cmp(a, b):
     # print a,b
     try:
-        return a.delayTime < b.delayTime
+        if a.delayTime < b.delayTime:
+            return -1
+        return 1
     except Exception,e:
         print 'error_cmp ' + str(a) + 'hhhh' + str(b)
 

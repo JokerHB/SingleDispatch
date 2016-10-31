@@ -5,7 +5,7 @@ from copy import deepcopy
 from random import choice
 
 class Heredity(object):
-    def __init__(self, jobs, mach,crossRate = 0.8, abnormalRate = 0.2, times = 10, indiNum = 100):
+    def __init__(self, jobs, mach,crossRate = 0.9, abnormalRate = 1.0, times = 10, indiNum = 100):
         self.CRate = crossRate
         self.ARate = abnormalRate
         self.times = times
@@ -38,9 +38,12 @@ class Heredity(object):
             new_cross = []
 
             for i in range(0, len(_cross), 2):
-                a,b = hpc.DoCorss(_cross[i], _cross[i + 1])
-                new_cross.append(a)
-                new_cross.append(b)
+                try:
+                    a,b = hpc.DoCorss(_cross[i], _cross[i + 1])
+                    new_cross.append(a)
+                    new_cross.append(b)
+                except Exception,e:
+                    print 'error_heredity_46 ' + str(e)
 
             for j in _abnormal:
                 j.Abnormal(self.ARate)

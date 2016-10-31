@@ -17,7 +17,7 @@ m1 = hpm.Machine(mN='M1')
 jobs = [j1, j2, j3, j4, j5, j6, j7, j8]
 match = {j1.name:m1, j2.name:m1, j3.name:m1, j4.name:m1, j5.name:m1, j6.name:m1, j7.name:m1, j8.name:m1}
 
-for i in range(100):
+for i in range(10):
     heredity = hph.Heredity(jobs, match)
     heredity.run()
     heredity.output()
