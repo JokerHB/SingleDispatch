@@ -5,7 +5,7 @@ from copy import deepcopy
 from random import choice
 
 class Heredity(object):
-    def __init__(self, jobs, mach,crossRate = 0.9, abnormalRate = 1.0, times = 10, indiNum = 100):
+    def __init__(self, jobs, mach,crossRate = 0.9, abnormalRate = 1.0, times = 100, indiNum = 100):
         self.CRate = crossRate
         self.ARate = abnormalRate
         self.times = times
