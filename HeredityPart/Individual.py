@@ -39,3 +39,10 @@ class Individual(object):
         for j in self.sequence:
             print j.name + ' ' + self.matchMachine[j.name].name
         print self.delayTime
+
+    def toString(self):
+        _ = ''
+        for j in self.sequence:
+            _ += j.name + ' ' + self.matchMachine[j.name].name + '\n'
+        _ += str(self.delayTime)
+        return _

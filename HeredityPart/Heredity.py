@@ -6,6 +6,15 @@ from random import choice
 
 class Heredity(object):
     def __init__(self, jobs, mach,crossRate = 0.9, abnormalRate = 1.0, times = 100, indiNum = 100):
+        """
+        init the heredity algorithm
+        :param jobs: whole job sequence
+        :param mach: the match of job and machine
+        :param crossRate: the rate of the cross operation
+        :param abnormalRate: the rate of the abnormal operation
+        :param times: the iter time
+        :param indiNum: individual number
+        """
         self.CRate = crossRate
         self.ARate = abnormalRate
         self.times = times
@@ -69,3 +78,6 @@ class Heredity(object):
     def output(self):
         self.individuals.sort(cmp=hpm.cmp)
         self.individuals[0].display()
+
+    def getBest(self):
+        return self.individuals[0]
