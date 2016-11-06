@@ -16,7 +16,7 @@ def DoCorss(individualA, individualB, rate = 0.8):
     subB = hpm.getRange(individualB.sequence, 0, pos)
     _subB = hpm.getRange(individualB.sequence, pos, len(individualB.sequence))
 
-    return (Check(individualA ,subA, _subA, deepcopy(jobs)), Check(individualB, subB, _subB, deepcopy(jobs)))
+    return (Check(individualA ,subA, _subB, deepcopy(jobs)), Check(individualB, subB, _subA, deepcopy(jobs)))
 
 def Check(indi ,subA, _subA, jobs):
    """

@@ -46,9 +46,14 @@ class Heredity(object):
             _abnormal = hpm.getRange(self.individuals, pos, len(self.individuals))
             new_cross = []
 
-            for i in range(0, len(_cross), 2):
+            for j in range(0, len(_cross), 2):
                 try:
-                    a,b = hpc.DoCorss(_cross[i], _cross[i + 1])
+                    if j == len(_cross) - 1:
+                        a, b = hpc.DoCorss(_cross[j], _cross[j])
+                        new_cross.append(a)
+                        new_cross.append(b)
+                        break
+                    a,b = hpc.DoCorss(_cross[j], _cross[j + 1])
                     new_cross.append(a)
                     new_cross.append(b)
                 except Exception,e:
