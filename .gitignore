@@ -87,3 +87,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
+.idea/misc.xml
+.idea/modules.xml
+.idea/SingleDispatch.iml
+.idea/workspace.xml
+.vscode/launch.json
